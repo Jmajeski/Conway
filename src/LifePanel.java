@@ -9,6 +9,7 @@ import java.util.*;
 
 public class LifePanel extends JPanel{
 	
+	private static final long serialVersionUID = 1L;
 	private static final int HEIGHT = 500;
 	private static final int WIDTH = 500;
 
