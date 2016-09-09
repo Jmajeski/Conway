@@ -13,15 +13,13 @@ public class LifePanel extends JPanel{
 	private static final int HEIGHT = 500;
 	private static final int WIDTH = 500;
 
-	
 	private LifeBoard board;
 	
 	//delete
 	private int counter = 1;
 	private int num;
+	
 	private ArrayList<int[][]> boardArr = new ArrayList<int[][]>();
-	
-	
 	
 	//constructor
 	public LifePanel(LifeBoard board){
@@ -30,8 +28,6 @@ public class LifePanel extends JPanel{
 		this.board = board;
 		
 		boardArr.add(board.getBoard());
-		
-		
 		
 		addMouseListener(new MouseAdapter(){
 			public void mouseClicked(MouseEvent e){
@@ -47,8 +43,6 @@ public class LifePanel extends JPanel{
 				board.updateBoard();
 				boardArr.add(board.getBoard());
 				counter++;
-				
-				
 			}
 			
 			else{
@@ -62,11 +56,9 @@ public class LifePanel extends JPanel{
 		else if ( e.getButton() == MouseEvent.BUTTON3){
 			if ( counter > 1){
 				counter--;
-			
 			}
-			
-			repaint();
-				
+
+			repaint();	
 		}
 
 		return;
@@ -85,9 +77,6 @@ public class LifePanel extends JPanel{
 					g.drawRect(i*5, j*5, 5, 5);
 					num++;
 				}
-
-			
-				
 			}
 		}
 		g.setColor(Color.white);
@@ -99,6 +88,4 @@ public class LifePanel extends JPanel{
 		
 		System.out.println(counter );
 	}
-	
-	
 }

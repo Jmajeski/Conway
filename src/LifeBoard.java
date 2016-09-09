@@ -45,7 +45,7 @@ public class LifeBoard {
 			for (int j = 0; j < ARRAY_SIZE; j++){
 				
 				count = 0;
-				///*
+				
 				for (int k = -1; k < 2; k++){
 					for (int m = -1; m < 2; m++){
 						if (i+k >= 0 && i+k < ARRAY_SIZE && j+m >= 0 && j+m < ARRAY_SIZE){
@@ -86,7 +86,8 @@ public class LifeBoard {
 			}
 			count = 0;
 		}
-		   for (int i = 0; i < ARRAY_SIZE; i++){
+		//store updated info into board array
+		for (int i = 0; i < ARRAY_SIZE; i++){
 			for (int j = 0; j < ARRAY_SIZE; j++){
 				board[i][j] = updateBoard[i][j];
 			}
@@ -96,14 +97,24 @@ public class LifeBoard {
 		return;
 	}
 	
+	//return board array as new two dimensional array
 	public int[][] getBoard(){
-		return board;
+		int[][] newBoard = new int[ARRAY_SIZE][ARRAY_SIZE];
+		
+		for(int i = 0; i < 100; i++){
+			for(int j = 0; j < 100; j++){
+				newBoard[i][j] = board[i][j];
+			}
+		}
+		return newBoard;
 	}
 	
+	//return given cell from given board
 	public int getCell(int[][] board, int x, int y){
 		return board[x][y];
 	}
 
+	/*
 	public void copyBoard(int[][] board){
 		for (int i = 0; i < ARRAY_SIZE; i++){
 			for (int j = 0; j < ARRAY_SIZE; j++){
@@ -112,5 +123,5 @@ public class LifeBoard {
 			
 			return;
 		}
-	}
+	}*/
 }
